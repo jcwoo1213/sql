@@ -4,17 +4,23 @@ const { getConnection } = require("oracledb");
 const db = require("./db");
 const app = express(); //인스턴스 생성.
 console.log(db);
+const dir = "localhost:3000";
 //주소-실행함수 =>라우팅
 // "/"
 app.get("/", (req, res) => {
   res.send("/ 홈에 오신것을 환영합니다");
 });
-// "/customer" ->
-app.get("/customer", (req, res) => {
-  res.send("/customer 경로 호출");
-});
-app.get("/product", (req, res) => {
-  res.send("/product경로 호출");
+
+app.get("/add_board", async (req, res) => {
+  const connection = await db.getConnection();
+  const qry = `INSERT into board (board_no,title,content,writer) values(6,'test','testtest','user01')`;
+  try {
+    const result = await connection.execute(qry);
+    res.send(result);
+  } catch (error) {
+    console.log(error);
+    res.send("error");
+  }
 });
 app.get("/student/:studno", async (req, res) => {
   console.log(req.params);
