@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>title</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      /* 전체 배경 */
+      body {
+        background-color: #f4f6f8;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      /* 컨테이너 */
+      .container {
+        width: 420px;
+        margin: 80px auto;
+        padding: 30px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      /* 폼 */
+      .container form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* 라벨 */
+      .container label {
+        margin-top: 15px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        font-size: 14px;
+        color: #333;
+      }
+
+      /* input, textarea 공통 */
+      .container input,
+      .container textarea {
+        padding: 10px;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        outline: none;
+      }
+
+      /* 포커스 효과 */
+      .container input:focus,
+      .container textarea:focus {
+        border-color: #4a90e2;
+      }
+      .wrap {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      thead th {
+        text-align: left;
+        border-bottom: 2px solid #ddd;
+        padding: 12px 10px;
+      }
+      tbody td {
+        border-bottom: 1px solid #eee;
+        padding: 12px 10px;
+      }
+      tbody tr:hover {
+        background: #fafafa;
+      }
+      .col-no {
+        width: 90px;
+      }
+      .col-writer {
+        width: 160px;
+      }
+      a.title {
+        color: inherit;
+        text-decoration: none;
+      }
+      a.title:hover {
+        text-decoration: underline;
+      }
+      table button {
+        background-color: rgba(247, 31, 96, 0.699);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 class="btn btn-primary">welcome home 정찬우</h3>
+    <!-- form -->
+    <!-- application/x-www-form-urlencoded:기본  multipart/form-data:여러가지 파일 가능  text/plain:텍스트로 나열 -->
+    <div class="container">
+      <form action="" method="post">
+        <label for="board_no">게시글번호</label
+        ><input type="text" name="user_name" id="board_no" required />
+        <label for="title">제목</label
+        ><input type="text" name="title" id="title" required />
+        <label for="content">내용</label
+        ><textarea name="content" id="content" required></textarea>
+        <label for="writer">작성자</label
+        ><input type="text" id="writer" name="writer" required />
+        <button type="submit">등록</button>
+        <button type="reset">취소</button>
+      </form>
+    </div>
+    <div class="wrap">
+      <h1>게시글 목록</h1>
+
+      <table>
+        <thead>
+          <tr>
+            <th class="col-no">글번호</th>
+            <th>제목</th>
+            <th class="col-writer">작성자</th>
+            <th>작성일시</th>
+            <th>삭제</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- <tr>
+            <td>12</td>
+            <td><a class="title" href="/board/12">오라클 연결 질문</a></td>
+            <td>찬우</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td><a class="title" href="/board/11">페이징 구현 확인 부탁</a></td>
+            <td>민수</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><a class="title" href="/board/10">Express 에러 처리</a></td>
+            <td>지수</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </div>
+    <!-- 글번호/제목/작성자/작성일시 -->
+    <script src="js/board.js">
+      //객체타입
+    </script>
+  </body>
+</html>
